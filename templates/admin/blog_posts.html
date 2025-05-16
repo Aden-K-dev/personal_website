@@ -1,0 +1,33 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<h1>Blog Posts</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in blog_posts %}
+        <tr>
+            <td>{{ post.title }}</td>
+            <td>{{ post.content }}</td>
+            <td>
+                {% if post.image %}
+                <img src="{{ url_for('static', filename='uploads/' + post.image) }}" alt="Image" width="100">
+                {% else %}
+                No Image
+                {% endif %}
+            </td>
+            <td>
+                <a href="{{ url_for('blogpostadminview.delete', post_id=loop.index0) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

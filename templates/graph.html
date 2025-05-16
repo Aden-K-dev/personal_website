@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Graph{% endblock %}
+
+{% block content %}
+<h1>Graph</h1>
+<div id="graph"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    var graphData = JSON.parse('{{ graph_json | safe }}');
+    Plotly.newPlot('graph', graphData, {
+        title: 'Temperature in Fort Wayne Since I Was Born',
+        xaxis: { title: 'Date' },
+        yaxis: { title: 'Temperature (F)' }
+    });
+</script>
+{% endblock %}

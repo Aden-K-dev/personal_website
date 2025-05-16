@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+<div style="margin-top: 60px;"></div>
+<img src="{{ url_for('static', filename='images/Personal_Website.jpg') }}" class="profile-pic">
+<p class="main-page-text">Hello I'm Aden, I go to Anthis Career Academy and this is my personal website for the software development class.</p>
+<div style="margin-top: 90px;"></div>
+
+<video controls>
+    <source src="{{ url_for('static', filename='videos/Personal_Website_2.mp4') }}" type="video/mp4">
+    <source src="{{ url_for('static', filename='videos/Personal_Website_2.webm') }}" type="video/webm">
+    Your browser does not support the video tag. Download the
+    <a href="{{ url_for('static', filename='videos/Personal_Website_2.mp4') }}">MP4</a> or
+    <a href="{{ url_for('static', filename='videos/Personal_Website_2.webm') }}">WEBM</a> video.
+</video>
+{% endblock %}

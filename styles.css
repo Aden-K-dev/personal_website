@@ -1,0 +1,207 @@
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #21a9fe;
+    color: #ffffff;
+    text-align: center;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0099, #5d6cdd);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.text {
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    z-index: 2;
+}
+
+.text h1 {
+    font-size: 4rem;
+    margin: 10;
+}
+
+.text p {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
+}
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: auto;
+    z-index: 1;
+    animation: moveWaves 15s linear infinite;
+}
+
+@keyframes moveWaves {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #0099ff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #005f99;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; 
+    margin: 20px auto;
+    display: block;
+}
+
+video {
+    width: 900px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+.main-page-text {
+    font-size: 2.5rem;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+textarea, input[type="text"], input[type="email"] {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    resize: none; 
+}
+
+textarea {
+    height: 200px;
+}
+
+textarea.large-textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    resize: none;
+}
+
+input.small-input, textarea.small-textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005f99;
+}
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.form-group input.small-input,
+.form-group textarea.large-textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.animated-subtext {
+    color: #cccccc;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.admin-panel-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.admin-panel-button .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0099ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.admin-panel-button .button:hover {
+    background-color: #005f99;
+}

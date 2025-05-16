@@ -65,7 +65,6 @@ class BlogPostAdminView(BaseView):
 
         return redirect(url_for('.index'))
 
-# Add the custom BlogPostAdminView
 admin.add_view(BlogPostAdminView(name='Blog Posts', endpoint='blogpostadminview'))
 
 try:
