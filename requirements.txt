@@ -4,3 +4,4 @@ matplotlib
 plotly
 flask-admin
 Werkzeug
+sqlalchemy
