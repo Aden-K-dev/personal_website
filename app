@@ -29,10 +29,8 @@ class MyAdminIndexView(AdminIndexView):
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('admin_login'))
 
-# Initialize Flask-Admin with default templates
 admin = Admin(app, name='Admin Panel', template_mode='bootstrap4', index_view=MyAdminIndexView())
 
-# Add views for managing uploads and images
 admin.add_view(FileAdmin(app.config['UPLOAD_FOLDER'], '/uploads/', name='Uploads', endpoint='uploads_admin'))
 admin.add_view(FileAdmin(GRAPH_FOLDER, '/images/', name='Images', endpoint='images_admin'))
 
@@ -83,7 +81,7 @@ def main():
 
 @app.route('/graph')
 def graph():
-    csv_file = 'c:\\Users\\kuhn512cs12\\Downloads\\4016573.csv'
+    csv_file = '4016573.csv'
 
     try:
         data = pd.read_csv(csv_file, header=0)

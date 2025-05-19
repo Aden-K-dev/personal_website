@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+<h1>Admin Panel</h1>
+<ul>
+    <li><a href="{{ url_for('uploads_admin.index') }}">Manage Uploads</a></li>
+    <li><a href="{{ url_for('images_admin.index') }}">Manage Images</a></li>
+    <li><a href="{{ url_for('blogpostadminview.index') }}">Manage Blog Posts</a></li>
+</ul>
+<a href="{{ url_for('admin_logout') }}">Logout</a>
+{% endblock %}

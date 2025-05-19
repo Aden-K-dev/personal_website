@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Q&A{% endblock %}
+
+{% block content %}
+<h1>Q&A</h1>
+
+<form method="POST">
+    <textarea name="question" class="large-textarea" placeholder="Ask me anything..." required></textarea>
+    <button type="submit">Submit Question</button>
+</form>
+<hr>
+
+{% for i, q in enumerate(questions) %}
+    <p><strong>Q:</strong> {{ q.question }}</p>
+    {% if q.answer %}
+        <p><strong>A:</strong> {{ q.answer }}</p>
+    {% else %}
+        <form method="POST">
+            <input type="hidden" name="question_index" value="{{ i }}">
+            <textarea name="answer" class="large-textarea" placeholder="Write an answer..." required></textarea>
+            <input type="password" name="password" class="small-input" placeholder="Admin Password" required>
+            <button type="submit">Submit Answer</button>
+        </form>
+    {% endif %}
+    <hr>
+{% endfor %}
+{% endblock %}

@@ -1,1 +1,6 @@
 Flask==2.3.2
+pandas
+matplotlib
+plotly
+flask-admin
+Werkzeug

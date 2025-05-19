@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+<h1>Blog</h1>
+<form method="POST" enctype="multipart/form-data" class="blog-form">
+    <div class="form-group">
+        <input type="text" name="title" class="small-input" placeholder="Title" required>
+        <textarea name="content" class="large-textarea" placeholder="Write your post here..." required></textarea>
+    </div>
+    <input type="file" name="image" accept="image/*">
+    <button type="submit">Add Post</button>
+</form>
+<hr>
+{% for post in blog_posts %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    {% if post.image %}
+        <img src="{{ url_for('static', filename='uploads/' + post.image) }}" style="max-width: 100%; height: auto;">
+    {% endif %}
+    <hr>
+{% endfor %}
+{% endblock %}
